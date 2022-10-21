@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+     <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
+
+     <!-- Font  -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+    <title>Flask Application</title>
+</head>
+<body>
+    <div class="hero">
+       <h1>Welcome.</h1>
+       <div class="text">
+        <h3>Hello visitor, this application is build to know whether you are depressed or not, knowingly or unknowingly.If you want to take test to check your depression then please click below button. </h3>
+        
+       </div>
+       <a href="{{url_for('test')}}">
+        <button type="button" class="test btn btn-lg">
+            Take Test
+           </button>
+
+       </a>
+       
+    </div>
+</body>
+</html>
+
