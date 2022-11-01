@@ -18,9 +18,16 @@ body{
 .text{
     width: 70%;
     text-align: center;
+  
 }
 
-
+.text-result
+{
+    width: 70%;
+    text-align: center;
+    word-spacing: 4px;
+    line-height: 1.8em;
+}
 
 h1{
     /* color: rebeccapurple; */

@@ -4,9 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+     <!-- Bootstrap -->
+     <!-- Latest compiled and minified CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
+
+     <!-- Font  -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+    <title>Result</title>
 </head>
 <body>
-    <h1>{{ output }}</h1>
+    <div class="hero" style="justify-content:flex-start;">
+        {% block body %}
+        <h2>{{name}} you have {{ output }} Stress</h2>
+        {% if output == "No" %}
+
+          <h4 class="text">
+            Congratulations you have no STRESS "+name+".Today where millions of people in the world experience stress daily you're not among those.<br><br>KEEP IT UP BUDDY !!!
+          </h4>
+
+        {% elif output == "Mild" %} 
+           <h4 class="text">
+            You have mild STRESS which may be due to recent hectic work schedule,some family problem our anything but don't worry these are just normal things happening in life.<br>So Dont' get Stressed Buddy.<br><br>JUST CHILL !!!
+           </h4> 
+        {% elif output == "Moderate" %}  
+            <h4 class="text">
+                You need to take care my friend 
+            </h4> 
+        {% else %}
+             <h4 class="text">
+                You must consult someone as soon as possible
+             </h4>    
+        {% endif %} 
+      {% endblock %}      
+    </div>
+    
 </body>
 </html>
