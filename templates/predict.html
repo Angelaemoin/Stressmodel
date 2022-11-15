@@ -1,46 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- Bootstrap -->
-     <!-- Latest compiled and minified CSS -->
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
 
-     <!-- Font  -->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@600&display=swap" rel="stylesheet">
+    <!-- Font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:wght@600&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/main.css')}}"
+    />
     <title>Result</title>
-</head>
-<body>
-    <div class="hero" style="justify-content:flex-start;">
-        {% block body %}
-        <h2>{{name}} you have {{ output }} Stress</h2>
-        {% if output == "No" %}
+  </head>
+  <body>
+    <div class="hero" style="justify-content: flex-start">
+      {% block body %}
+      <h2>Hey you have {{ leveloutput }}</h2>
+      {% if leveloutput == "Nothing" %}
+      <img
+        src="{{url_for('static',filename='images/shinchanwithoutbg.gif')}}"
+        alt=""
+      />
 
-          <h4 class="text">
-            Congratulations you have no STRESS "+name+".Today where millions of people in the world experience stress daily you're not among those.<br><br>KEEP IT UP BUDDY !!!
-          </h4>
+      {% elif leveloutput == "Normal ups and down" %}
+      <img src="{{url_for('static',filename='images/level1.png')}}" alt="" />
+      <div class="suggest">
+        <p class="suggestion">
+        Be happy you have no depression. Your doubts about yourself to answer
+        this questionnaire was because of some ups and downs in your life that’s
+        absolutely normal and it happens with everyone. Listen to this podcast
+        it will energize your mind.
+       </p>
+      </div>
+      <div class="videos">
+        <div>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/29tr2FOrw1Y"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/ApccemGnh78"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
 
-        {% elif output == "Mild" %} 
-           <h4 class="text">
-            You have mild STRESS which may be due to recent hectic work schedule,some family problem our anything but don't worry these are just normal things happening in life.<br>So Dont' get Stressed Buddy.<br><br>JUST CHILL !!!
-           </h4> 
-        {% elif output == "Moderate" %}  
-            <h4 class="text">
-                You need to take care my friend 
-            </h4> 
-        {% else %}
-             <h4 class="text">
-                You must consult someone as soon as possible
-             </h4>    
-        {% endif %} 
-      {% endblock %}      
+      {% elif leveloutput == "Mild Mood Disturbance" %}
+      <img src="{{url_for('static',filename='images/level2.png')}}" alt="" />
+      <div class="suggest">
+        <p class="suggestion">
+          You have mild depression which may be due to recent hectic work
+          schedule, some family problem, no friends to talk but don&#39;t worry
+          these are just normal things happening in everyone&#39;s life. Go on
+          for vacations with your family and friends, have your own time, talk
+          to people around you. Here are some books to read. Reading can even
+          relax your body by lowering your heart rate and easing the tension in
+          your muscles. A 2009 study at the University of Sussex found that
+          reading can reduce stress by up to 68%. Take some time now so your
+          mental health will not be in risk. Books-The body keeps the score.
+        </p>
+      </div>
+
+      {% elif leveloutput == "BorderLine Clinical Depression" %}
+      <img src="{{url_for('static',filename='images/level3.png')}}" alt="" />
+      <div class="suggest">
+        <p class="suggestion">
+          You are just stepping in for depression because of some environmental
+          factors, anger, wrong food, not exercising or no body movements. Don’t
+          take tension just Calm your mind and body with few mentioned points I
+          would mention some important points try to do it daily still if the
+          result is same then consult a counselor.<br />
+          1- Exercise https://youtu.be/OJfH0j6iF8I <br />2- Foods
+          https://youtu.be/ATs3dAfeGnw <br />3- Meditation/ Yoga
+          https://youtu.be/Sxddnugwu-8 <br />4- Follow any one hobby
+          https://www.thesource.org/post/10-hobbies-that-fight-depression-
+          anxiety
+        </p>
+      </div>
+
+      {% elif leveloutput == "Moderate Depression" %}
+      <img src="{{url_for('static',filename='images/level4.png')}}" alt="" />
+      <div class="suggest">
+        <p class="suggestion">
+          Please consult a Psychologist for the treatment as they will conduct
+          therapy sessions which will help a lot in coping up with depression.
+        </p>
+      </div>
+
+      {% elif leveloutput == "Severe Depresion"%}
+      <img src="{{url_for('static',filename='images/level5.png')}}" alt="" />
+      <div class="suggest">
+        <p class="suggestion">
+          Please consult a Psychologist for the treatment as they will conduct
+          therapy sessions which will help a lot in coping up with depression.
+        </p>
+      </div>
+
+      {% elif leveloutput == "Extreme Depression"%}
+      <img src="{{url_for('static',filename='images/level6.png')}}" alt="" />
+      <div class="suggest">
+        <p class="suggestion">
+          Please consult a Psychologist for the treatment as they will conduct
+          therapy sessions which will help a lot in coping up with depression.
+        </p>
+      </div>
+
+      {% else %}
+      <p>something happened</p>
+      {% endif %} {% endblock %}
     </div>
-    
-</body>
+  </body>
 </html>

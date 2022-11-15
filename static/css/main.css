@@ -95,3 +95,17 @@ select{
     padding: 1.5%;
     margin: 1%;
 }
+
+.suggestion
+{
+    margin: 0 0 10px;
+    letter-spacing: 1px;
+    line-height: 2;
+    font-size: 18px;
+}
+
+.suggest
+{
+    width: 55%;
+    margin: 3%;
+}
